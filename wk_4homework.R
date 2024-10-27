@@ -36,6 +36,9 @@ RawGenderData <- read.csv(here("wk4_hw_data", "HDR23-24_Composite_indices_comple
                        header = TRUE,
                        sep = ",")
 
+#alt method for reading csv in
+RawTest <- read.csv("wk4_hw_data/HDR23-24_Composite_indices_complete_time_series.csv")
+
 GenderData <- RawGenderData %>%
   clean_names()
 

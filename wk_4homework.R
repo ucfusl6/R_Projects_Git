@@ -15,7 +15,7 @@ library(tmap)             #thematic maps
 
 #Load in spatial data (json format)
 
-RawWorldMap <- st_read(here("wk4_hw_data", "World_Countries_(Generalized)_9029012925078512962.geojson"))
+RawWorldMap <- st_read(here("World_Countries_(Generalized)_9029012925078512962.geojson"))
 
 WorldMap <- RawWorldMap %>%
   clean_names()
@@ -29,15 +29,15 @@ head(WorldMap)
 #WorldMapSimp <- st_simplify(WorldMap, dTolerance = 1000)
 #plot(WorldMapSimp$geometry)
 
- 
+
 #Load in gender inequality data
 
-RawGenderData <- read.csv(here("wk4_hw_data", "HDR23-24_Composite_indices_complete_time_series.csv"),
-                       header = TRUE,
-                       sep = ",")
+RawGenderData <- read.csv(here("gender_inequality_index.csv"),
+                          header = TRUE,
+                          sep = ",")
 
 #alt method for reading csv in
-RawTest <- read.csv("wk4_hw_data/HDR23-24_Composite_indices_complete_time_series.csv")
+RawTest <- read.csv("gender_inequality_index.csv")
 
 GenderData <- RawGenderData %>%
   clean_names()
@@ -93,6 +93,7 @@ tm_shape(GIIMap) +
               palette="-RdYlGn",
               midpoint=0,
               title="Diff. between GI Index 2010-2019",
+              labels = c("0.1 to 0.3", "-0.1 to 0.1", "-0.3 to -0.1", "-0.5 to -0.3", "< -0.5"),  # reverse the labels
               alpha = 0.9) + 
   #tm_compass(position = c("left", "bottom"),type = "arrow") + 
   tm_scale_bar(position = c("left", "bottom")) +

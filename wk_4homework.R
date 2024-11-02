@@ -93,7 +93,7 @@ tm_shape(GIIMap) +
               palette="RdYlGn",
               midpoint=0,
               title="Diff. between GI Index 2010-2019",
-              #labels = c("0.1 to 0.3", "-0.1 to 0.1", "-0.3 to -0.1", "-0.5 to -0.3", "< -0.5"),  # reverse the labels
+              labels = c("0.1 to 0.3", "-0.1 to 0.1", "-0.3 to -0.1", "-0.5 to -0.3", "< -0.5"),  # reverse the labels
               fill_alpha = 0.9) + 
   #tm_compass(position = c("left", "bottom"),type = "arrow") + 
   tm_scale_bar(position = c("left", "bottom")) +

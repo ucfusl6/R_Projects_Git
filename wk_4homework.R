@@ -90,11 +90,11 @@ tm_shape(GIIMap) +
               id = "country.x",
               #style="sd",
               breaks = c(-Inf,-0.5,-0.3,-0.1,0.1,0.3),
-              palette="-RdYlGn",
+              palette="RdYlGn",
               midpoint=0,
               title="Diff. between GI Index 2010-2019",
-              labels = c("0.1 to 0.3", "-0.1 to 0.1", "-0.3 to -0.1", "-0.5 to -0.3", "< -0.5"),  # reverse the labels
-              alpha = 0.9) + 
+              #labels = c("0.1 to 0.3", "-0.1 to 0.1", "-0.3 to -0.1", "-0.5 to -0.3", "< -0.5"),  # reverse the labels
+              fill_alpha = 0.9) + 
   #tm_compass(position = c("left", "bottom"),type = "arrow") + 
   tm_scale_bar(position = c("left", "bottom")) +
   tm_layout(title = "Difference in GI Index 2010-2019")
